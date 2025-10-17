@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="center-box">
+        <h1>Emotion Detector</h1>
+        <form method="post" action="/analyze/">
+            <textarea name="text" placeholder="Type your text here..." required></textarea>
+            <button type="submit">Analyze Emotion</button>
+        </form>
+        {% if result and input_text %}
+        <div class="result-box">
+            <h2>Detected Emotion:</h2>
+            <p><strong>{{ result.label }}</strong></p>
+            <h3>Your Sentence:</h3>
+            <p>{{ input_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

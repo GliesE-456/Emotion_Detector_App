@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Past Analyses</h2>
+<ul>
+  {% for msg in messages %}
+    <li>{{ msg.timestamp }} — <b>{{ msg.emotion }}</b>: {{ msg.text }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
